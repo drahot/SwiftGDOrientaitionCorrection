@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftexif",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kradalby/SwiftExif.git",
+      "state" : {
+        "revision" : "ab83faa56618d14678279d3c93bb2fbc9070cb2b",
+        "version" : "0.0.7"
+      }
+    },
+    {
+      "identity" : "swiftgd",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/SwiftGD.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "809379541e1d37a293b4732abb881f3ec8863112"
+      }
+    }
+  ],
+  "version" : 2
+}
