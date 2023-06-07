@@ -16,7 +16,7 @@ public enum ImageOrientation: String {
     case rightBottom = "right-bottom"
     case rightLeft = "right-left"
 
-    public func image(url: URL) -> SwiftGD.Image? {
+    public func image(url: URL) -> Image? {
         switch self {
         case .bottomRight:
             return Image(url: url)?.rotated(Angle(degrees: 180))
