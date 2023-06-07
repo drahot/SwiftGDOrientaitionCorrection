@@ -16,6 +16,29 @@ public enum ImageOrientation: String {
     case rightBottom = "right-bottom"
     case rightLeft = "right-left"
 
+    public init?(rawValue: String) {
+        switch rawValue.lowercased() {
+        case "top-left":
+            self = .topLeft
+        case "top-right":
+            self = .topRight
+        case "bottom-right":
+            self = .bottomRight
+        case "bottom-left":
+            self = .bottomLeft
+        case "left-top":
+            self = .leftTop
+        case "right-top":
+            self = .rightTop
+        case "right-bottom":
+            self = .rightBottom
+        case "right-left":
+            self = .rightLeft
+        default:
+            return nil
+        }
+    }
+
     public func image(url: URL) -> Image? {
         switch self {
         case .bottomRight:
