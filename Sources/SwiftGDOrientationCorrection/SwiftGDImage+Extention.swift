@@ -21,7 +21,7 @@ extension SwiftGD.Image {
                 .first?
                 .value["Orientation"]
 
-        let image = ImageOrientation(rawValue: orientation? ?? "")?.image(url: url) ?? Image(url: url)
+        let image = ImageOrientation(rawValue: orientation ?? "")?.image(url: url) ?? Image(url: url)
         return try image?.export(as: format)
     }
 }
