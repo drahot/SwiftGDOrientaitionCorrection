@@ -8,8 +8,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "swift_gd_image",
-            targets: ["swift_gd_image"]),
+            name: "SwiftGDImage",
+            targets: ["SwiftGDImage"]),
     ],
     dependencies: [
         .package(url: "https://github.com/twostraws/SwiftGD.git", branch: "main"),
@@ -19,14 +19,14 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "swift_gd_image",
+            name: "SwiftGDImage",
             dependencies: [
                 .product(name: "SwiftGD", package: "swiftgd"),
                 .product(name: "SwiftExif", package: "swiftexif"),
             ]
         ),
         .testTarget(
-            name: "swift_gd_imageTests",
-            dependencies: ["swift_gd_image"]),
+            name: "SwiftGDImageTests",
+            dependencies: ["SwiftGDImage"]),
     ]
 )
