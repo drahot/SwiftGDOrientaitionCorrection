@@ -2,25 +2,37 @@
 // Created by 堀田竜也 on 2023/06/08.
 //
 
-import SwiftGDOrientationCorrection
 
 import Foundation
+
+import SwiftGD
 import XCTest
 
-final class SwiftGDOrientationCorrectionTests: XCTest {
+@testable import SwiftGDOrientationCorrection
+
+final class SwiftGDOrientationCorrectionTests: XCTestCase {
 
     func testExportWithOrientationCorrection() throws {
         let images = [
-            "IMG_0052.jpg",
-            "IMG_0056.jpg",
+            "IMG-0052.jpg",
+            "IMG-0056.jpg",
         ]
-        images.forEach {
-            let url = URL(fileURLWithPath: "Tests/SwiftGDOrientationCorrectionTests/Resources/\($0)")
+        try images.forEach {
+            let url = URL(fileURLWithPath: "./Resources/\($0)")
             let image = Image(url: url)
-            let data = try image?.exportWithOrientationCorrection(url: url, format: .jpeg)
+            let data = try image?.exportWithOrientationCorrection(url: url, format: .jpg(quality: 70))
             XCTAssertNotNil(data)
         }
+        let noImages = [
+            "IMG-0051.png",
+            "IMG-0055.png",
+        ]
+        try noImages.forEach {
+            let url = URL(fileURLWithPath: "./Resources/\($0)")
+            let image = Image(url: url)
+            let data = try image?.exportWithOrientationCorrection(url: url, format: .jpg(quality: 70))
+            XCTAssertNil(data)
+        }
     }
-
 
 }
