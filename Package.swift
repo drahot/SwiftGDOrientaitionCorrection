@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift_gd_image",
+    name: "SwiftGDOrientationCorrection",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "swift_gd_image",
-            targets: ["swift_gd_image"]),
+            name: "SwiftGDOrientationCorrection",
+            targets: ["SwiftGDOrientationCorrection"]),
     ],
     dependencies: [
         .package(url: "https://github.com/twostraws/SwiftGD.git", branch: "main"),
@@ -19,14 +19,14 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "swift_gd_image",
+            name: "SwiftGDOrientationCorrection",
             dependencies: [
                 .product(name: "SwiftGD", package: "swiftgd"),
                 .product(name: "SwiftExif", package: "swiftexif"),
             ]
         ),
         .testTarget(
-            name: "swift_gd_imageTests",
-            dependencies: ["swift_gd_image"]),
+            name: "SwiftGDOrientationCorrectionTests",
+            dependencies: ["SwiftGDOrientationCorrection"]),
     ]
 )
