@@ -1,4 +1,16 @@
 # SwiftGDOrientationCorrection
 Swift GD の画像の向きを自動で修正するヘルパーライブラリ
 
-Install the GD library on your computer. If you're using macOS, install [Homebrew](http://brew.sh/) then run the command `brew install gd`. If you're using Linux, run `apt-get libgd-dev` as root.
+## Installation
+
+On Ubuntu/Debian based Linux:
+
+```bash
+apt install -y libiptc-data libexif-dev libiptcdata0-dev libgd-dev
+```
+
+On macOS using brew:
+
+```bash
+brew install gd libexif libiptcdata
+```
