@@ -41,7 +41,6 @@ final class ImageOrientationTests: XCTestCase {
         lowerValidOrientations.forEach {
             XCTAssertNotNil(ImageOrientation(rawValue: $0))
         }
-
         let upperValidOrientations = [
             "TOP-LEFT",
             "TOP-RIGHT",
